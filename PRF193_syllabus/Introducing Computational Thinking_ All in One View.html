@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html -->
+<html lang="en" data-bs-theme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<title>Introducing Computational Thinking: All in One View</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async="" src="./Introducing Computational Thinking_ All in One View_files/matomo.js.tải xuống"></script><script src="./Introducing Computational Thinking_ All in One View_files/themetoggle.js.tải xuống"></script><link rel="stylesheet" type="text/css" href="./Introducing Computational Thinking_ All in One View_files/styles.css">
+<script src="./Introducing Computational Thinking_ All in One View_files/scripts.js.tải xuống" type="text/javascript"></script><!-- mathjax --><script type="text/x-mathjax-config;executed=true">
+    MathJax.Hub.Config({
+      config: ["MMLorHTML.js"],
+      jax: ["input/TeX","input/MathML","output/HTML-CSS","output/NativeMML", "output/PreviewHTML"],
+      extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
+      TeX: {
+        extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+      },
+      tex2jax: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+        processEscapes: true
+      }
+    });
+    </script><script src="./Introducing Computational Thinking_ All in One View_files/MathJax.js.tải xuống" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><!-- Responsive Favicon for The Carpentries --><link rel="apple-touch-icon" sizes="180x180" href="https://librarycarpentry.github.io/lc-computational-thinking/favicons/lc/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://librarycarpentry.github.io/lc-computational-thinking/favicons/lc/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://librarycarpentry.github.io/lc-computational-thinking/favicons/lc/favicon-16x16.png">
+<link rel="manifest" href="https://librarycarpentry.github.io/lc-computational-thinking/favicons/lc/site.webmanifest">
+<link rel="mask-icon" href="https://librarycarpentry.github.io/lc-computational-thinking/favicons/lc/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+<style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style></head>
+<body><div id="MathJax_Message" style="display: none;"></div>
+    <header id="top" class="navbar navbar-expand-md top-nav library"><svg xmlns="http://www.w3.org/2000/svg" class="d-none"><symbol id="check2" viewBox="0 0 16 16"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path></symbol><symbol id="circle-half" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path></symbol><symbol id="moon-stars-fill" viewBox="0 0 16 16"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path><path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path></symbol><symbol id="sun-fill" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path></symbol></svg><a class="visually-hidden-focusable skip-link" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#main-content">Skip to main content</a>
+  <div class="container-fluid top-nav-container">
+    <div class="col-md-8">
+      <div class="large-logo">
+        <img id="lc-logo" alt="Library Carpentry" src="./Introducing Computational Thinking_ All in One View_files/library-logo.svg" class="dark-filter"><span class="badge text-bg-warning">
+          <abbr title="This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.">
+            <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle icon" aria-hidden="true" style="border-radius: 5px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              Alpha
+            </a>
+            <span class="visually-hidden">This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.</span>
+          </abbr>
+        </span>
+
+      </div>
+    </div>
+    <div class="selector-container">
+      <div id="theme-selector">
+        <li class="nav-item dropdown" id="theme-button-list">
+          <button class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (dark)">
+            <svg class="bi my-1 theme-icon-active"><use href="#moon-stars-fill"></use></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+<li>
+              <button type="button" class="btn dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                <svg class="bi me-2 theme-icon"><use href="#sun-fill"></use></svg>
+                Light
+                <svg class="bi ms-auto d-none"><use href="#check2"></use></svg></button>
+            </li>
+            <li>
+              <button type="button" class="btn dropdown-item d-flex align-items-center active" data-bs-theme-value="dark" aria-pressed="true">
+                <svg class="bi me-2 theme-icon"><use href="#moon-stars-fill"></use></svg>
+                Dark
+                <svg class="bi ms-auto d-none"><use href="#check2"></use></svg></button>
+            </li>
+            <li>
+              <button type="button" class="btn dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                <svg class="bi me-2 theme-icon"><use href="#circle-half"></use></svg>
+                Auto
+                <svg class="bi ms-auto d-none"><use href="#check2"></use></svg></button>
+            </li>
+          </ul>
+</li>
+      </div>
+
+
+      <div class="dropdown" id="instructor-dropdown">
+        <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye icon" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> Instructor View <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+<li><button class="dropdown-item" type="button" onclick="window.location.href=&#39;../aio.html&#39;;">Learner View</button></li>
+        </ul>
+</div>
+    </div>
+  </div>
+  <hr></header><nav class="navbar navbar-expand-xl bottom-nav library" aria-label="Main Navigation"><div class="container-fluid nav-container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
+      <span class="navbar-toggler-icon"></span>
+      <span class="menu-title">Menu</span>
+    </button>
+    <div class="nav-logo">
+      <img class="small-logo dark-filter" alt="Library Carpentry" src="./Introducing Computational Thinking_ All in One View_files/library-logo-sm.svg">
+</div>
+    <div class="lesson-title-md">
+      Introducing Computational Thinking
+    </div>
+    <div class="search-icon-sm">
+      <!-- TODO: do not show until we have search
+        <i role="img" aria-label="Search the All In One page" data-feather="search"></i>
+      -->
+    </div>
+    <div class="desktop-nav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<li class="nav-item">
+          <span class="lesson-title">
+            Introducing Computational Thinking
+          </span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/key-points.html">Key Points</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/instructor-notes.html">Instructor Notes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/images.html">Extract All Images</a>
+        </li>
+        <li class="nav-item dropdown">
+          <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+<hr>
+<li><a class="dropdown-item" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/jargon_busting.html">Jargon Busting</a></li>
+<li><a class="dropdown-item" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/reference.html">Reference</a></li>
+          </ul>
+</li>
+      </ul>
+</div>
+    <!--
+    <form class="d-flex col-md-2 search-form">
+      <fieldset disabled>
+      <input class="form-control me-2 searchbox" type="search" placeholder="" aria-label="">
+        <button class="btn btn-outline-success tablet-search-button"  type="submit">
+          <i class="search-icon" data-feather="search" role="img" aria-label="Search the All In One page"></i>
+        </button>
+      </fieldset>
+    </form>
+    -->
+    <a id="search-button" class="btn btn-primary" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
+  </div>
+<!--/div.container-fluid -->
+</nav><div class="col-md-12 mobile-title">
+  Introducing Computational Thinking
+</div>
+
+<aside class="col-md-12 lesson-progress"><div style="width: %" class="percentage">
+    %
+  </div>
+  <div class="progress library">
+    <div class="progress-bar library" role="progressbar" style="width: %" aria-valuenow="" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    </div>
+  </div>
+</aside><div class="container">
+      <div class="row">
+        <!-- START: inst/pkgdown/templates/navbar.html -->
+<div id="sidebar-col" class="col-lg-4">
+  <div id="sidebar" class="sidebar">
+      <nav aria-labelledby="flush-headingEleven"><button role="button" aria-label="close menu" alt="close menu" aria-expanded="true" aria-controls="sidebar" class="collapse-toggle" data-collapse="Collapse " data-episodes="Episodes ">Collapse <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+        <div class="sidebar-inner">
+          <div class="row mobile-row" id="theme-row-mobile">
+            <div class="col" id="theme-selector">
+              <li class="nav-item dropdown" id="theme-button-list">
+                <button class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (auto)">
+                  <svg class="bi my-1 theme-icon-active"><use href="#moon-stars-fill"></use></svg><span class="d-lg-none ms-1" id="bd-theme-text">Toggle Theme</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-theme-text">
+<li>
+                    <button type="button" class="btn dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                      <svg class="bi me-2 theme-icon"><use href="#sun-fill"></use></svg>
+                      Light
+                      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg></button>
+                  </li>
+                  <li>
+                    <button type="button" class="btn dropdown-item d-flex align-items-center active" data-bs-theme-value="dark" aria-pressed="true">
+                      <svg class="bi me-2 theme-icon"><use href="#moon-stars-fill"></use></svg>
+                      Dark
+                      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg></button>
+                  </li>
+                  <li>
+                    <button type="button" class="btn dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                      <svg class="bi me-2 theme-icon"><use href="#circle-half"></use></svg>
+                      Auto
+                      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg></button>
+                  </li>
+                </ul>
+</li>
+            </div>
+          </div>
+          <div class="row mobile-row">
+            <div class="col">
+              <div class="sidenav-view-selector">
+                <div class="accordion accordion-flush" id="accordionFlush9">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingNine">
+                      <button class="accordion-button collapsed" id="instructor" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye icon" id="eye" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> Instructor View
+                      </button>
+                    </h2>
+                    <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlush2">
+                      <div class="accordion-body">
+                        <a href="https://librarycarpentry.github.io/lc-computational-thinking/aio.html">Learner View</a>
+                      </div>
+                    </div>
+                  </div>
+<!--/div.accordion-item-->
+                </div>
+<!--/div.accordion-flush-->
+              </div>
+<!--div.sidenav-view-selector -->
+            </div>
+<!--/div.col -->
+
+            <hr>
+</div>
+<!--/div.mobile-row -->
+
+          <div class="accordion accordion-flush" id="accordionFlush11">
+            <div class="accordion-item">
+
+              <button id="chapters" class="accordion-button show" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven" aria-expanded="false" aria-controls="flush-collapseEleven">
+                <h2 class="accordion-header chapters" id="flush-headingEleven">
+                  EPISODES
+                </h2>
+              </button>
+              <div id="flush-collapseEleven" class="accordion-collapse show collapse" aria-labelledby="flush-headingEleven" data-bs-parent="#accordionFlush11">
+
+                <div class="accordion-body">
+                  <div class="accordion accordion-flush" id="accordionFlush1">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading1">
+        <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/index.html">Summary and Schedule</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush2">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading2">
+        <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/intro.html">1. Introduction</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/exercise.html">2. Exercise</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/computation_practice.html">3. Computational thinking in practice</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/computation_programming.html">4. Computational thinking in programming</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/pseudocode.html">5. Pseudocode</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/solutions.html">6. Potential solutions to practice exercises</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+                </div>
+              </div>
+            </div>
+
+            <hr class="half-width">
+<div class="accordion accordion-flush lesson-resources" id="accordionFlush12">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwelve">
+                  <button class="accordion-button collapsed" id="lesson-resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+                    RESOURCES
+                  </button>
+                </h2>
+                <div id="flush-collapseTwelve" class="accordion-collapse collapse" aria-labelledby="flush-headingTwelve" data-bs-parent="#accordionFlush12">
+                  <div class="accordion-body">
+                    <ul>
+<li>
+                        <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/key-points.html">Key Points</a>
+                      </li>
+                      <li>
+                        <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/instructor-notes.html">Instructor Notes</a>
+                      </li>
+                      <li>
+                        <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/images.html">Extract All Images</a>
+                      </li>
+                      <hr>
+<li><a class="dropdown-item" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/jargon_busting.html">Jargon Busting</a></li>
+<li><a class="dropdown-item" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/reference.html">Reference</a></li>
+                    </ul>
+</div>
+                </div>
+              </div>
+            </div>
+            <hr class="half-width lesson-resources">
+<a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html">See all in one page</a>
+
+
+            <hr class="d-none d-sm-block d-md-none">
+<div class="d-grid gap-1">
+
+            </div>
+          </div>
+<!-- /div.accordion -->
+        </div>
+<!-- /div.sidebar-inner -->
+      </nav>
+</div>
+<!-- /div.sidebar -->
+  </div>
+<!-- /div.sidebar-col -->
+<!-- END:   inst/pkgdown/templates/navbar.html-->
+
+        <!-- START: inst/pkgdown/templates/content-extra.html -->
+  <div class="col-xl-8 col-lg-12 primary-content">
+    <main id="main-content" class="main-content"><div class="container lesson-content">
+        
+        
+<section id="aio-intro"><p>Content from <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/intro.html">Introduction</a></p>
+<hr>
+<p>Last updated on 2025-11-11 |
+
+        <a href="https://github.com/LibraryCarpentry/lc-computational-thinking/edit/main/episodes/intro.md" class="external-link">Edit this page <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></a></p>
+<p>Estimated time: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 75 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What is computational thinking?</li>
+<li>What are the four components of computational thinking?</li>
+<li>How can computational thinking help solve complex problems?</li>
+<li>Why is ethical consideration important in automation and algorithm
+design?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Understand the concept and importance of computational thinking</li>
+<li>Learn the four components of computational thinking: decomposition,
+pattern recognition, algorithms, and abstraction</li>
+<li>Recognize how computational thinking can be applied to solve complex
+problems</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Computational thinking is an essential prerequisite for anyone
+wanting to learn to program computers and write code.</p>
+<p>Different definitions of computational thinking exist. However,
+computational thinking can be described as a set of strategies to enable
+people to solve problems, especially complex ones. The BBC provides a
+good definition:</p>
+<p><em>“Computers can be used to help us solve problems. However, before
+a problem can be tackled, the problem itself and the ways in which it
+could be solved need to be understood. Computational thinking … allows
+us to take a complex problem, understand what the problem is and develop
+possible solutions. We can then present these solutions in a way that a
+computer, a human, or both, can understand.”</em></p>
+<hr>
+<figure><img src="./Introducing Computational Thinking_ All in One View_files/arrowing.png" style="width:40.0%" alt="Arrows pointing different ways" class="figure mx-auto d-block dark-filter"></figure><div class="section level4">
+<h4 id="problem-scenario">Problem scenario<a class="anchor" aria-label="anchor" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#problem-scenario"></a>
+</h4>
+<p>Four friends are out on an afternoon walk through a forest. Their
+plan was to go only for a short hike, so no-one has brought along an
+emergency beacon, and all mobile phones were left in the car. Everyone
+has a water bottle, though these are no longer full, but no-one brought
+a map as the trail they were planning to follow is clearly marked and
+signposted.</p>
+<p>However, they all left the trail together in a great rush when they
+heard a distant cry for help. After some fast walking through dense
+woods trying and failing to reach whoever made that distress call, they
+realise quite suddenly that they are lost. The cries sound much more
+distant now, but when they retrace their steps to what they thought was
+the path to strike out in a different direction, they cannot find
+it.</p>
+<p>The sun is starting to sink, it is growing colder, they are now
+hopelessly lost, and everyone is starting to feel hungry …</p>
+<p><em>So what do they do?</em></p>
+<figure><img src="./Introducing Computational Thinking_ All in One View_files/arrowing.png" style="width:40.0%" alt="Arrows pointing different ways" class="figure mx-auto d-block dark-filter"></figure><hr>
+</div>
+<div class="section level4">
+<h4 id="breaking-down-a-complex-problem">Breaking down a complex problem<a class="anchor" aria-label="anchor" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#breaking-down-a-complex-problem"></a>
+</h4>
+<p>This is a complex problem. As we progress through this lesson, we
+will learn how to break this problem down so that we can start to solve
+it. Let’s first come to grips with what computational thinking is.</p>
+<figure><img src="./Introducing Computational Thinking_ All in One View_files/comp-think.png" style="width:60.0%" alt="The four components of computational thinking" class="figure mx-auto d-block dark-filter"><div class="figcaption">The four components of computational
+thinking</div>
+</figure><p>There are four essential components of computational thinking:</p>
+<ul>
+<li>
+<strong>Decomposition</strong> – breaking a problem down into more
+manageable parts so that solutions can be found for each. This is also
+called <em>factoring</em>.</li>
+<li>
+<strong>Pattern recognition</strong> – looking for similarities
+within a problem or with other problems so that past solutions or
+knowledge can be re-used</li>
+<li>
+<strong>Algorithms</strong> – developing step-by-step solutions to
+each part of the problem</li>
+<li>
+<strong>Abstraction</strong> – generalising (abstracting) the
+important detail to make a solution reusable</li>
+</ul>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell callout-icon"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Professor Jeannette Wing raised computational thinking as an
+important issue for researchers in a 2006 paper. She stated,
+<em>“Informally, computational thinking describes the mental activity in
+formulating a problem to admit a computational solution. The solution
+can be carried out by a human or machine, or more generally, by
+combinations of humans and machines.”</em></p>
+<figure><img src="./Introducing Computational Thinking_ All in One View_files/brains.png" style="width:40.0%" alt="brain" class="figure mx-auto d-block dark-filter"></figure><p>Wing believes that computational thinking is just as important a
+skill for school children to learn as reading, writing and arithmetic.
+Increasingly, schools are including computational thinking in school
+curricula.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section level4">
+<h4 id="but-first-do-no-harm">But first, do no harm …<a class="anchor" aria-label="anchor" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#but-first-do-no-harm"></a>
+</h4>
+<p>While automation brings many benefits, such as lightning-fast data
+capture and analysis, it can also render decisions and analysis opaque
+and overly rigid. The famous phrase <em>‘Computer says no’</em> from the
+TV show <em>Little Britain</em> is a perfect example of this kind of
+intransigence. Experiences of this kind will frustrate users.</p>
+<p>Algorithms have also been criticised for bias. As Karan Praharaj <a href="https://towardsdatascience.com/how-are-algorithms-biased-8449406aaa83" class="external-link">says</a>:
+<em>“Algorithms do what they’re taught. Unfortunately, some are
+inadvertently taught prejudices and unethical biases by societal
+patterns hidden in the data … When these algorithms do the job of
+amplifying racial, social and gender inequality, instead of alleviating
+it; it becomes necessary to take stock of the ethical ramifications and
+potential malevolence of the technology.”</em></p>
+<p>Use automation, but use it wisely, and ethically, and always with
+lashings of human oversight.</p>
+<div id="jargon-busting-optional-not-included-in-timing" class="callout">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell callout-icon"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+</div>
+<span class="callout-header">Callout</span>
+<div id="jargon-busting-optional-not-included-in-timing" class="callout-inner">
+<h3 class="callout-title">Jargon busting (Optional, not included in
+timing)</h3>
+<div class="callout-content">
+<p>The <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/jargon_busting.html">Jargon Busting exercise</a> is a
+helpful way to begin to explore terms, phrases, and ideas related to
+code and software development.</p>
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 callout-icon" aria-hidden="true"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div> Instructor Note </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div class="accordion-body">
+<p>This exercise can be useful when you teach Computational Thinking as
+the introduction to a full LC workshop, especially if you want learners
+to have an opportunity to meet each other and interact. It can take
+anywhere from 10 to 45 minutes, depending on your approach.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div class="section level4">
+<h4 id="whats-next">What’s next?<a class="anchor" aria-label="anchor" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#whats-next"></a>
+</h4>
+<p>Our friends in the forest are still in the shouting, blaming and
+squabbling stage of their predicament, so while they are occupied in
+<strong>NOT</strong> solving their problem, we will look at
+computational thinking in a little more detail and examine how we can
+use each step to solve a maths problem.</p>
+<hr>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-key callout-icon"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Computational thinking involves strategies to solve complex problems
+and can be applied to both humans and computers.</li>
+<li>The four components of computational thinking are decomposition,
+pattern recognition, algorithms, and abstraction.</li>
+<li>Computational thinking is essential for problem-solving in
+programming and other fields.</li>
+<li>Ethical considerations and human oversight are crucial in automation
+to avoid biases and ensure transparency.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section level4">
+<h4 id="references">References<a class="anchor" aria-label="anchor" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#references"></a>
+</h4>
+<ol style="list-style-type: decimal">
+<li><p><a href="https://www.bbc.com/" class="external-link">British Broadcasting
+Corporation</a> BBC Bitesize. <a href="https://www.bbc.com/bitesize/guides/zp92mp3/revision/1" class="external-link">KS3:
+Introduction to computational thinking</a>.</p></li>
+<li><ol start="2006" style="list-style-type: decimal">
+<li>Wing, Jeannette M. “Computational Thinking”, <em>Communications of
+the ACM</em>, March 2006, Vol. 49 No.&nbsp;3, Pages 33-35. DOI: <a href="https://dx.doi.org/10.1145/1118178.1118215" class="external-link">10.1145/1118178.1118215</a>.</li>
+</ol></li>
+</ol>
+</div></section><section id="aio-exercise"><p>Content from <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/exercise.html">Exercise</a></p>
+<hr>
+<p>Last updated on 2025-11-11 |
+
+        <a href="https://github.com/LibraryCarpentry/lc-computational-thinking/edit/main/episodes/exercise.md" class="external-link">Edit this page <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></a></p>
+<p>Estimated time: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 45 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+        </div>
+<p>In this exercise, we will see how computational thinking can be used
+to add up all the numbers between 1 and 200 in our heads,
+i.e.&nbsp;<code>1 + 2 + 3 + 4</code> and so on. We should be able to do this
+in less than a minute.</p>
+<p>Seems impossible?</p>
+<p>It’s not.</p>
+<p>Using the first computational thinking step - <em>Decomposition</em>
+- we break the problem up into smaller pieces. Rather than trying to add
+the numbers up sequentially, which would be challenging for many people
+to do in their heads, let’s approach the task in a different way.</p>
+<div id="decomposition" class="callout challenge">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap callout-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="decomposition" class="callout-inner">
+<h3 class="callout-title">Decomposition</h3>
+<div class="callout-content">
+<p>Let’s begin at each end of the 1-200 sequence by adding up the first
+and last numbers.</p>
+<p>What is <code>200 + 1</code>?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>The answer is <code>201</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="decomposition" class="callout challenge">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap callout-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="decomposition" class="callout-inner">
+<h3 class="callout-title">Decomposition<em> (continued)</em>
+</h3>
+<div class="callout-content">
+<p>Let’s now add up the second and the second last numbers,
+i.e.&nbsp;<code>199 + 2</code>.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<p>The answer is <code>201</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="decomposition" class="callout challenge">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap callout-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="decomposition" class="callout-inner">
+<h3 class="callout-title">Decomposition<em> (continued)</em>
+</h3>
+<div class="callout-content">
+<p>Let’s now add up the third and the third last numbers,
+i.e.&nbsp;<code>198 + 3</code>.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<p>The answer is <code>201</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="section level3">
+<h3 id="pattern-recognition">Pattern recognition<a class="anchor" aria-label="anchor" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#pattern-recognition"></a>
+</h3>
+<p>Using our second step - <em>Pattern recognition</em> - we should be
+able to spot a clear pattern, i.e.&nbsp;that each pair of numbers appears to
+add up to <code>201</code>.</p>
+<figure><img src="./Introducing Computational Thinking_ All in One View_files/word-count.png" style="width:25.0%" alt="Spotting a pattern" class="figure mx-auto d-block dark-filter"><div class="figcaption">Spotting a pattern</div>
+</figure><p>If we follow this same process with <strong>all</strong> the numbers
+between 1 and 200, we will end up with <strong>100 pairs</strong>, each
+of which will add up to <code>201</code>.</p>
+<hr>
+</div>
+<div class="section level3">
+<h3 id="algorithm">Algorithm<a class="anchor" aria-label="anchor" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#algorithm"></a>
+</h3>
+<p>Using an <em>Algorithm</em> - another name for a series of steps -
+how do we calculate the final total?</p>
+<p>We multiply the <code>number of pairs</code> (100) by
+<code>201</code> (the total to which each pair adds up).</p>
+<p><code>100 * 201</code> gives us the answer of
+<code>20,100</code>.</p>
+<p>So far, so good.</p>
+<p>Now, what about about our fourth step, <em>Abstraction</em>?</p>
+<hr>
+</div>
+<div class="section level3">
+<h3 id="abstraction">Abstraction<a class="anchor" aria-label="anchor" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#abstraction"></a>
+</h3>
+<p><em>Abstraction</em> will enable us to generalise from that
+experience, i.e.&nbsp;repeat the process we used to add up all the numbers
+between 1 and 200 to add up a <em>different</em> set of numbers, e.g.,
+1-500.</p>
+<p>The <em>Algorithm</em> will be</p>
+<p>(<code>number to be added</code> divided by 2) multiplied by
+(<code>number to be added</code> +1). We can express that as an
+algebraic formula:</p>
+<p><code>(x/2) * (x + 1)</code></p>
+<p>where <em><code>x</code></em> is the
+<code>number to be added</code>.</p>
+<hr>
+<p>That’s it! Using those four key steps, we have learned the basics of
+computational thinking.</p>
+<hr>
+<div id="practice" class="callout discussion">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle callout-icon"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="practice" class="callout-inner">
+<h3 class="callout-title">Practice</h3>
+<div class="callout-content">
+<p>Use the algorithm above to add up all the numbers between 1 and 24, 1
+and 50, and 1 and 1,000.</p>
+</div>
+</div>
+</div>
+<div id="discussion" class="callout discussion">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle callout-icon"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="discussion" class="callout-inner">
+<h3 class="callout-title">Discussion</h3>
+<div class="callout-content">
+<p>The numbers above are all even numbers. What would be the process for
+adding up numbers if the final number is an odd one, e.g., 17? Can you
+use the same formula? If not, what adaptations would you need to make to
+the formula?</p>
+</div>
+</div>
+</div>
+</div></section><section id="aio-computation_practice"><p>Content from <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/computation_practice.html">Computational thinking in practice</a></p>
+<hr>
+<p>Last updated on 2025-11-11 |
+
+        <a href="https://github.com/LibraryCarpentry/lc-computational-thinking/edit/main/episodes/computation_practice.md" class="external-link">Edit this page <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></a></p>
+<p>Estimated time: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 30 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What is the difference between programming and computational
+thinking?</li>
+<li>How is computational thinking used in daily life?</li>
+<li>What are the steps involved in computational thinking?</li>
+<li>How can structure diagrams help in breaking down problems?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Understand the difference between programming and computational
+thinking</li>
+<li>Recognize how computational thinking is applied in everyday
+life</li>
+<li>Learn the steps of computational thinking such as problem breakdown,
+pattern recognition, and developing algorithms</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>While thinking computationally is a prerequisite for programming,
+programming and computational thinking are not the same thing.</p>
+<table class="table">
+<colgroup>
+<col width="33%">
+<col width="33%">
+<col width="33%">
+</colgroup>
+<thead><tr class="header">
+<th align="center"><strong>Programming</strong></th>
+<th align="center">&nbsp;</th>
+<th align="center"><strong>Computational thinking</strong></th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="center">instructs a computer to carry out a sequence of steps
+in a particular order.</td>
+<td align="center">&nbsp;</td>
+<td align="center">is the process that helps decide what those steps
+will be, i.e.&nbsp;what the computer will be told to do.</td>
+</tr></tbody>
+</table>
+<hr>
+<p>Computers are precise, and computing instructions must be clear and
+unambiguous, as the computer cannot think - it can only follow orders.
+Unlike humans, computers do not get bored or distracted, they process
+data very quickly, and will carry out the same tedious, repetitive tasks
+over and over again without making mistakes.</p>
+<figure><img src="./Introducing Computational Thinking_ All in One View_files/proc-diagram.png" style="width:100.0%" alt="Computational thinking at work" class="figure mx-auto d-block dark-filter"><div class="figcaption">The computational thinking process in
+action</div>
+</figure><div class="section level4">
+<h4 id="computational-thinking-in-our-daily-lives">Computational thinking in our daily lives<a class="anchor" aria-label="anchor" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#computational-thinking-in-our-daily-lives"></a>
+</h4>
+<p>Subconsciously, we practise computational thinking every day of our
+lives.</p>
+<div id="testimonial1" class="callout testimonial">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart callout-icon"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</div>
+<span class="callout-header">Testimonial</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>“Computational thinking describes the mental activity in formulating
+a problem to admit a computational solution. The solution can be carried
+out by a human or machine.”</p>
+<p>— Jeannette Wing</p>
+</div>
+</div>
+</div>
+<p>Every time we need to plan to do something, we use some of the steps
+of computational thinking such as problem breakdown, pattern recognition
+and developing algorithms.</p>
+<ul>
+<li><p>Project managers use computational thinking to plan complex
+activities such as building a tunnel or revamping a playground.</p></li>
+<li><p>Epidemiologists use it to identify patterns that help predict how
+a disease outbreak will spread.</p></li>
+<li><p>Parents use it to juggle work, parenting, community
+responsibilities and housework.</p></li>
+<li><p>Lost hikers can use it to try to find their way out of the
+forest.</p></li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="breaking-problems-down-with-structure-diagrams">Breaking problems down with structure diagrams<a class="anchor" aria-label="anchor" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#breaking-problems-down-with-structure-diagrams"></a>
+</h4>
+<p>When trying to solve problems, it is essential to break them down
+into their constituent parts. Pasting sticky notes on a wall is one way
+to visualise the necessary steps.</p>
+<p>Structure diagrams also allow you to plan problem breakdown visually.
+At the top should be the objective, and the steps underneath should
+start with high level considerations. These high level considerations
+can then be broken down into smaller and smaller steps.</p>
+<p>In the hiking scenario, the group of four people have to try to solve
+the problem of being lost. This diagram is the very start of their
+thinking about their immediate needs.</p>
+<figure><img src="./Introducing Computational Thinking_ All in One View_files/structure.png" style="width:100.0%" alt="Structure diagram" class="figure mx-auto d-block dark-filter"><div class="figcaption">Basic Structure Diagram</div>
+</figure><hr>
+<div id="practice" class="callout discussion">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle callout-icon"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="practice" class="callout-inner">
+<h3 class="callout-title">Practice</h3>
+<div class="callout-content">
+<p>Imagine that night is now falling fast, and our friends are still
+stuck in the forest. Add some more detail to the structure diagram to
+help them survive the night.</p>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-key callout-icon"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Computational thinking involves breaking down problems, recognizing
+patterns, and developing algorithms.</li>
+<li>While programming is instructing a computer to carry out tasks,
+computational thinking helps decide what those tasks will be.</li>
+<li>Computational thinking is used in various fields, from project
+management to epidemiology, and even in daily tasks.</li>
+<li>Structure diagrams are useful tools for visually breaking down and
+planning problem-solving steps.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section><section id="aio-computation_programming"><p>Content from <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/computation_programming.html">Computational thinking in programming</a></p>
+<hr>
+<p>Last updated on 2025-11-11 |
+
+        <a href="https://github.com/LibraryCarpentry/lc-computational-thinking/edit/main/episodes/computation_programming.md" class="external-link">Edit this page <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></a></p>
+<p>Estimated time: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 40 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>Why is decomposition crucial in programming?</li>
+<li>How can we break down a problem like counting words in a text?</li>
+<li>What is the difference between linear and branching code?</li>
+<li>How can pattern recognition help in programming?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Understand the importance of decomposition in programming</li>
+<li>Learn how to break down a problem into discrete parts for
+programming</li>
+<li>Recognize the difference between linear and branching code</li>
+<li>Apply pattern recognition to adapt existing code for new
+problems</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><em>Decomposition</em> is crucial in any kind of problem breakdown,
+but especially so in programming. The computer must be told
+<strong>precisely</strong> what to do, and in what order, so problems
+must be broken down into discrete parts and each section coded
+appropriately.</p>
+<p>Suppose we want to find the ten words most commonly used in a text.
+How might we go about that?</p>
+<div class="section level4">
+<h4 id="linear-code">Linear code<a class="anchor" aria-label="anchor" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#linear-code"></a>
+</h4>
+<p>While there are many different ways to do this task, this is one way,
+where all the commands are run in a linear sequence, e.g.,</p>
+<figure><img src="./Introducing Computational Thinking_ All in One View_files/count-words.png" style="width:60.0%" alt="counting words in a text" class="figure mx-auto d-block dark-filter"><div class="figcaption">Counting words in a text</div>
+</figure><p>First we save the file in <code>.txt</code> format to eliminate all
+the “smart” formatting created by programs like Word (as they would
+otherwise introduce a messy bunch of extraneous characters). Then we
+progressively eliminate everything from the text that is not a word,
+i.e.&nbsp;punctuation.</p>
+<p>Converting all the words to lower case means we end up with a single
+version of each word - not two. This is important because, to a
+computer, <code>Word</code> (starting with an upper case letter) does
+not equal <code>word</code> (starting with a lower case letter) - it
+treats them as two separate entities.</p>
+<p>By replacing spaces with <code>new line</code> characters, each word
+will end up on its own line, which makes them easy to sort
+alphabetically and then count.</p>
+<p>Each part of the sequence would need to be individually programmed.
+Fortunately, programmers can adapt code that others have already used to
+do similar tasks, such as code to identify letter, number or word
+frequency. Once you are coding, this is where the computational thinking
+skill of <em>pattern recognition</em> comes in - identifying similar
+code that can be used for or adapted to the specific problem you want to
+solve.</p>
+<hr>
+</div>
+<div class="section level4">
+<h4 id="branching-code">Branching code<a class="anchor" aria-label="anchor" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#branching-code"></a>
+</h4>
+<p>Programming rarely works in such a linear fashion. Code generally
+includes branching so that different pathways can be taken, depending on
+whether or not certain conditions are met, e.g., different responses to
+a <code>Yes/No</code> or <code>True/False</code> decision, as in the
+example here.</p>
+<figure><img src="./Introducing Computational Thinking_ All in One View_files/workflow.png" style="width:90.0%" alt="Branching code" class="figure mx-auto d-block dark-filter"><div class="figcaption">Branching code</div>
+</figure><hr>
+<div id="hiking-preparation-strategy" class="callout discussion">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle callout-icon"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="hiking-preparation-strategy" class="callout-inner">
+<h3 class="callout-title">Hiking Preparation Strategy</h3>
+<div class="callout-content">
+<p>Our friends have finally made it out of the forest and back to
+civilisation. Their experience, while unpleasant, has not put them off
+hiking. Draw a structure diagram of the planning they need to do for
+next time to avert another disaster.</p>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-key callout-icon"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Decomposition is essential for breaking down problems into discrete
+parts in programming.</li>
+<li>Computers require precise instructions, and problems must be broken
+down accordingly.</li>
+<li>Linear code runs commands in a sequence, while branching code allows
+for different pathways based on conditions.</li>
+<li>Pattern recognition helps programmers adapt existing code for new
+problems.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section><section id="aio-pseudocode"><p>Content from <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/pseudocode.html">Pseudocode</a></p>
+<hr>
+<p>Last updated on 2025-11-11 |
+
+        <a href="https://github.com/LibraryCarpentry/lc-computational-thinking/edit/main/episodes/pseudocode.md" class="external-link">Edit this page <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></a></p>
+<p>Estimated time: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 45 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What is pseudocode and why is it useful?</li>
+<li>How can pseudocode help in planning a coding solution?</li>
+<li>What are loops in programming, and how do they work?</li>
+<li>How can variables and abstraction be used in coding?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Understand the purpose and benefits of pseudocode in
+programming</li>
+<li>Learn to write pseudocode to break down coding problems</li>
+<li>Apply pseudocode to explain programming needs to others</li>
+<li>Recognize how loops and variables function in pseudocode and
+programming</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Regardless of programming language, <strong>pseudocode</strong> is a
+useful tool to break coding problems down. Pseudocode helps you list
+each step of a planned process so your steps are in a logical order
+before you code.</p>
+<p>Pseudocode is also a good way to explain your needs to software
+developers or to run your ideas past people who may not be
+programmers.</p>
+<div class="section level4">
+<h4 id="pseudocode-example">Pseudocode example<a class="anchor" aria-label="anchor" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#pseudocode-example"></a>
+</h4>
+<p>Suppose we are fans of the <em>Lord of the Rings</em> novels, but we
+wonder how much the female character of Galadriel featured in the story
+compared to the male characters Frodo, Gandalf, Aragorn, Legolas and
+Boromir. We could flick through, say, <em>The Fellowship of the
+Ring</em> to check (which would be painfully slow), or we could run a
+short piece of code to count the number of times each character’s name
+is mentioned throughout the story. We could document those steps in
+pseudocode before writing any code to be sure we have covered all the
+things we will need to do.</p>
+<figure><img src="./Introducing Computational Thinking_ All in One View_files/pseudo-example.png" style="width:65.0%" alt="Pseudocode steps" class="figure mx-auto d-block dark-filter"><div class="figcaption">Pseudocode steps</div>
+</figure><p><em>Notes</em></p>
+<ul>
+<li>The <a href="https://www.kaggle.com/datasets/ashishsinhaiitr/lord-of-the-rings-text" class="external-link">text
+only version</a> of <em>The Fellowship of the Ring</em> is the file the
+code will process.<br>
+</li>
+<li>The characters’ names, Galadriel, Frodo, Gandalf, Aragorn, Legolas
+and Boromir are the values the program will look for and count.</li>
+<li>A <code>.txt</code> file is important for this kind of activity, as
+all the “smart” formatting (i.e.&nbsp;curly quote marks, hyphens converted to
+<code>em</code> and <code>en</code> dashes) that appear within a
+<code>.doc</code> or <code>.docx</code> file is stripped out when saving
+a <code>.doc</code> or <code>.docx</code> file as a <code>.txt</code>
+file.</li>
+<li>We could re-use the code to run a similar operation on <a href="https://www.kaggle.com/datasets/ashishsinhaiitr/lord-of-the-rings-text?select=02+-+The+Two+Towers.txt" class="external-link"><em>The
+Two Towers</em></a> and <a href="https://www.kaggle.com/datasets/ashishsinhaiitr/lord-of-the-rings-text?select=03+-+The+Return+Of+The+King.txt" class="external-link"><em>The
+Return Of The King</em></a>, or we could adapt the code even further for
+any name or word frequency question we want to automate.</li>
+</ul>
+<hr>
+<p><em>Spoiler alert</em> - Galadriel gets only <strong>35</strong>
+mentions by name compared to Frodo’s <strong>944</strong>.</p>
+<hr>
+</div>
+<div class="section level4">
+<h4 id="loops">Loops<a class="anchor" aria-label="anchor" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#loops"></a>
+</h4>
+<p>The code that will be used to do this job is an example of a
+<strong>loop</strong>. Loops allow us to execute the same command over
+and over again until a certain pre-set condition has been met. In this
+case, the condition is to have counted all the appearances of each name
+on a designated list.</p>
+<figure><img src="./Introducing Computational Thinking_ All in One View_files/loop-diagram.png" style="width:65.0%" alt="How loops work" class="figure mx-auto d-block dark-filter"><div class="figcaption">Loops in programming</div>
+</figure><p>In the example above, the program will search all the way through the
+text of <a href="https://www.kaggle.com/datasets/ashishsinhaiitr/lord-of-the-rings-text" class="external-link"><em>The
+Fellowship of the Ring</em></a>, adding up all the appearances of the
+first value in the list (<code>Galadriel</code>). Then it will go
+through the text again to do the count for the second value
+(<code>Frodo</code>). The same process will then be done for all the
+other characters respectively, and then the program will report its
+findings for each value. It will then stop running because the list of
+names has been exhausted, i.e.&nbsp;the condition has been met.</p>
+<p>The name values can also be called <em>variables</em>, because the
+value will vary each time the loop runs through the text. Variables are
+an important part of <code>abstraction</code>.</p>
+<p>The same piece of code could be re-used for any word counting
+exercise by changing the list variables and the input source. That would
+be another example of <code>abstraction</code>.</p>
+<hr>
+<div id="practice-1.-creating-backup-copies-of-files" class="callout challenge">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap callout-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="practice-1.-creating-backup-copies-of-files" class="callout-inner">
+<h3 class="callout-title">Practice 1. Creating backup copies of
+files</h3>
+<div class="callout-content">
+<p>In a folder, we have 250 image files for which we want to create
+backup copies before we process the images for archiving. Manually
+creating 250 copies of files seems like a very boring thing to do, so we
+are going to automate the workflow to create the backup copies.</p>
+<p>Write some pseudocode of how you might automate this process.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Potential solution
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p><em>Steps in the copying process</em></p>
+<figure><img src="./Introducing Computational Thinking_ All in One View_files/pseudo-loop.png" style="width:70.0%" alt="Steps in the loop" class="figure mx-auto d-block dark-filter"><div class="figcaption">Steps in the copying loop</div>
+</figure><div class="section level3">
+<h3 id="example-code-in-the-unix-shell">Example code in the Unix shell<a class="anchor" aria-label="anchor" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#example-code-in-the-unix-shell"></a>
+</h3>
+<p><code>{bash, results="hide"} for filename in "*.jpg" "*.tif" "*.png"   do   cp $filename backup-$filename   echo $filename backup-$filename done</code></p>
+<figure><img src="./Introducing Computational Thinking_ All in One View_files/loop-shell.png" style="width:90.0%" alt="Loop as it would be written in the Unix shell" class="figure mx-auto d-block dark-filter"><div class="figcaption">Coding a loop in the Unix shell</div>
+</figure><p><em>Notes</em></p>
+<p>In the code example above, the loop will run through the folder
+creating back up copies of all the files with the file extension
+<code>.jpg</code>. As each file is copied, each original filename and
+the filename of each new file will be printed to the screen.</p>
+<p>Then the loop will restart and repeat the process for all the files
+with the file extension <code>.tif</code>, again printing the original
+filenames and the filenames of the new files to the screen.</p>
+<p>Then the loop will restart and run through the folder a third time,
+creating back up copies of all the files with the file extension
+<code>.png</code>, again printing the original filenames and the
+filenames of the new files to the screen.</p>
+<p>The loop will then stop, as there are no more variables to work
+on.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="practice-2a.-tidying-up" class="callout challenge">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap callout-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="practice-2a.-tidying-up" class="callout-inner">
+<h3 class="callout-title">Practice 2a. Tidying up</h3>
+<div class="callout-content">
+<p>We have a large folder of files left over from a project that is now
+finished. The files are all sitting in the one folder which makes it
+hard to navigate. We want to archive the project and its files, but in
+the process, we want to create folders by file type, e.g.,
+<code>.pdf</code>, <code>.jpg</code>, <code>.doc</code>, so that anyone
+wanting to access those particular file types can do so easily. We also
+want to delete files that have no file extensions. New folders will need
+to be created and the different files moved into them by file type.</p>
+<p>Write some pseudocode of how you might automate this process.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">
+  Potential solution
+  </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<p><em>Steps in the moving process</em></p>
+<ol style="list-style-type: decimal">
+<li>Identify the different file types in the folder.</li>
+<li>Create new folders to house the different file types.</li>
+<li>Create a series of loops to work through the folder, file type by
+file type, moving the files to the correct folders.</li>
+<li>Once the final loop has run, delete all remaining files left within
+the main folder.</li>
+<li>Print filenames to the screen as the loop runs to verify it is
+working as required.</li>
+</ol>
+<p><em>Using a shell script to automate the work</em></p>
+<p>The task above could be fully automated using a shell script. A shell
+script is a text file containing a sequence of commands for a UNIX-based
+operating system that allows those commands to be run in one go, rather
+than by entering each command one at a time. Scripts make task
+automation possible. The script would contain the commands to do the
+tasks listed above, such as folder creation, file movement using loops,
+file deletion and so on. The benefit of shell scripts is that the code
+they contain can be re-used or adapted for similar tasks.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="practice-2b.-tidying-up-more-carefully" class="callout discussion">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle callout-icon"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="practice-2b.-tidying-up-more-carefully" class="callout-inner">
+<h3 class="callout-title">Practice 2b. Tidying up more carefully</h3>
+<div class="callout-content">
+<p>In the process of doing the above, we actually made a few blunders.
+We accidentally deleted some files we should have kept either because
+they were mislabelled or they were missing a file extension. Because
+this automation is a complex operation that cannot be undone, we want to
+make sure we don’t make those kinds of mistakes again.</p>
+<p>One way to do that is to check we have coded the workflow correctly
+<em>before</em> we finally execute the automation. Therefore we could
+introduce a step that mimics what would happen if we executed the script
+on the files, perhaps by printing the filenames we want to move or
+delete to the screen (or to a file) rather than <em>actually</em>
+deleting or moving them. That way we can check we are working on the
+correct files and only execute the final move workflow once we are sure
+we have everything right.</p>
+<p>Write some pseudocode for that step of the process.</p>
+</div>
+</div>
+</div>
+<div id="practice-3.-managing-incoming-data" class="callout discussion">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle callout-icon"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="practice-3.-managing-incoming-data" class="callout-inner">
+<h3 class="callout-title">Practice 3. Managing incoming data</h3>
+<div class="callout-content">
+<p>Suppose you have a number of acoustic listening devices set up in the
+forest. Every day, you receive an email from each device with an
+attached data file recording that day’s activity. In order to analyse
+the data from the devices, all the separate daily data files need to be
+combined weekly into a single file. It is important that each device ID
+is listed within a column in the combined data file to identify all the
+different locations.</p>
+<p>In order to analyse the data over time, you need to append the weekly
+file digest to the existing, now very large, main data file. Before
+adding anything new, and in order to safeguard the integrity of the
+data, you need to create a backup of that main data file and send a copy
+of that backup file to your cloud storage account for safekeeping. Once
+the new data has been appended, you need to rename the new main data
+file with today’s date as part of the file name, and run software
+against the file to ensure the integrity of the data, e.g., to check
+that no data is missing (which might indicate a malfunctioning
+device).</p>
+<p>Write some pseudocode of how you might automate this process.</p>
+</div>
+</div>
+</div>
+<hr>
+<p>Some potential solutions to these practice coding exercises can be
+found on the <a href="https://librarycarpentry.github.io/lc-computational-thinking/solutions.html">Solutions</a> page.</p>
+<hr>
+</div>
+<div class="section level4">
+<h4 id="learning-to-program">Learning to program<a class="anchor" aria-label="anchor" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#learning-to-program"></a>
+</h4>
+<p>This lesson should help you prepare to learn to code by understanding
+the process that coders use to break complex problems down into
+programmable parts.</p>
+<p>Links to sites that teach coding and other resources on computational
+thinking are listed in the <a href="https://librarycarpentry.github.io/lc-computational-thinking/resources.html">Resources</a>
+section.</p>
+<hr>
+<div id="for-later" class="callout discussion">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle callout-icon"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="for-later" class="callout-inner">
+<h3 class="callout-title">For later</h3>
+<div class="callout-content">
+<p>Suppose you write that file movement script and it works a treat.</p>
+<p>Why not get it to run every month to tidy up folders that invariably
+become messy over time, e.g., your computer’s <code>Downloads</code>
+folder?</p>
+<p>Or, suppose you use a file naming convention that starts with
+<code>YYYY-MM-DD</code>. Why not run a script annually to sort and
+organize your documents by year?</p>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-key callout-icon"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Pseudocode is a valuable tool for organizing and planning coding
+solutions before actual programming.</li>
+<li>It helps to list each step of a process logically, making it easier
+to translate into code.</li>
+<li>Loops allow the execution of repetitive tasks until certain
+conditions are met.</li>
+<li>Variables in loops can change with each iteration, demonstrating the
+concept of abstraction.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section><section id="aio-solutions"><p>Content from <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/solutions.html">Potential solutions to practice exercises</a></p>
+<hr>
+<p>Last updated on 2025-11-11 |
+
+        <a href="https://github.com/LibraryCarpentry/lc-computational-thinking/edit/main/episodes/solutions.Rmd" class="external-link">Edit this page <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+        </div>
+<p>Different people might approach these practice tasks in very
+different ways so these solutions are suggestions only. They are offered
+here to provide some guidance for people who might otherwise struggle
+with laying out steps.</p>
+<div id="practice-1.-creating-backup-copies-of-files" class="callout challenge">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap callout-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="practice-1.-creating-backup-copies-of-files" class="callout-inner">
+<h3 class="callout-title">Practice 1. Creating backup copies of
+files</h3>
+<div class="callout-content">
+<p>In a folder, we have 250 image files for which we want to create
+backup copies before we process the images for archiving. Manually
+creating 250 copies of files seems like a very boring thing to do, so we
+are going to automate the workflow to create the backup copies.</p>
+<p>This is a perfect task for a loop, as the task is simple and
+repetitive.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Potential solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p><em>Steps in the copying process</em></p>
+<figure><img src="./Introducing Computational Thinking_ All in One View_files/pseudo-loop.png" style="width:70.0%" alt="Steps in the loop" class="figure mx-auto d-block dark-filter"><div class="figcaption">Steps in the copying loop</div>
+</figure><div class="section level3">
+<h3 id="example-code-in-the-unix-shell">Example code in the Unix shell<a class="anchor" aria-label="anchor" href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#example-code-in-the-unix-shell"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#cb1-1" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> <span class="st">"*.jpg"</span> <span class="st">"*.tif"</span> <span class="st">"*.png"</span></span>
+<span id="cb1-2"><a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#cb1-2" tabindex="-1"></a>  <span class="cf">do</span></span>
+<span id="cb1-3"><a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#cb1-3" tabindex="-1"></a>  <span class="fu">cp</span> <span class="va">$filename</span> backup-<span class="va">$filename</span></span>
+<span id="cb1-4"><a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#cb1-4" tabindex="-1"></a>  <span class="bu">echo</span> <span class="va">$filename</span> backup-<span class="va">$filename</span></span>
+<span id="cb1-5"><a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#cb1-5" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+</div>
+<figure><img src="./Introducing Computational Thinking_ All in One View_files/loop-shell.png" style="width:90.0%" alt="Loop as it would be written in the Unix shell" class="figure mx-auto d-block dark-filter"><div class="figcaption">Coding a loop in the Unix shell</div>
+</figure><p><em>Notes</em></p>
+<p>In the code example above, the loop will run through the folder
+creating back up copies of all the files with the file extension
+<code>.jpg</code>. As each file is copied, each original filename and
+the filename of each new file will be printed to the screen.</p>
+<p>Then the loop will restart and repeat the process for all the files
+with the file extension <code>.tif</code>, again printing the original
+filenames and the filenames of the new files to the screen.</p>
+<p>Then the loop will restart and run through the folder a third time,
+creating back up copies of all the files with the file extension
+<code>.png</code>, again printing the original filenames and the
+filenames of the new files to the screen.</p>
+<p>The loop will then stop, as there are no more variables to work
+on.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="practice-2a.-tidying-up" class="callout challenge">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap callout-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="practice-2a.-tidying-up" class="callout-inner">
+<h3 class="callout-title">Practice 2a. Tidying up</h3>
+<div class="callout-content">
+<p>We have a large folder of files left over from a project that is now
+finished. The files are all sitting in the one folder which makes it
+hard to navigate. We want to archive the project and its files, but in
+the process, we want to create folders by file type, e.g.,
+<code>.pdf</code>, <code>.jpg</code>, <code>.doc</code>, so that anyone
+wanting to access those particular file types can do so easily. We also
+want to delete files that have no file extensions. New folders will need
+to be created and the different files moved into them by file type.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Potential solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<p><em>Steps in the moving process</em></p>
+<ol style="list-style-type: decimal">
+<li>Identify the different file types in the folder.</li>
+<li>Create new folders to house the different file types.</li>
+<li>Create a series of loops to work through the folder, file type by
+file type, moving the files to the correct folders.</li>
+<li>Once the final loop has run, delete all remaining files left within
+the main folder.</li>
+<li>Print filenames to the screen as the loop runs to verify it is
+working as required.</li>
+</ol>
+<p><em>Using a shell script to automate the work</em></p>
+<p>The task above could be fully automated using a shell script. A shell
+script is a text file containing a sequence of commands for a UNIX-based
+operating system that allows those commands to be run in one go, rather
+than by entering each command one at a time. Scripts make task
+automation possible. The script would contain the commands to do the
+tasks listed above, such as folder creation, file movement using loops,
+file deletion and so on. The benefit of shell scripts is that the code
+they contain can be re-used or adapted for similar tasks.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="practice-2b.-tidying-up-more-carefully" class="callout discussion">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle callout-icon"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="practice-2b.-tidying-up-more-carefully" class="callout-inner">
+<h3 class="callout-title">Practice 2b. Tidying up more carefully</h3>
+<div class="callout-content">
+<p>In the process of doing the above, we actually made a few blunders.
+We accidentally deleted some files we should have kept either because
+they were missing a file extension. Because this automation is a complex
+operation that cannot be undone, we want to make sure we don’t make
+those kinds of mistakes again.</p>
+<p>One way to do that is to check we have coded the workflow correctly
+<em>before</em> we finally execute the automation, possibly by simply
+printing to screen all the relevant filenames prior to moving them -
+that way, it is possible to check we are working on the right files
+before any action is taken.</p>
+<p>To prevent accidental deletion of files, we could introduce a step to
+check whether or not to delete a file, e.g., by using the remove command
+<code>rm</code> in the Unix shell with an <code>-i</code> flag. The
+<code>-i</code> flag forces the system to ask for confirmation on
+whether or not to delete a file. One can answer either
+<strong>Y</strong> or <strong>N</strong> to the example below.</p>
+<p><img src="./Introducing Computational Thinking_ All in One View_files/code-in-shell.png" alt="Confirming a remove command" class="figure dark-filter">{alt=“RM command in the shell”,
+width=“75%”}</p>
+</div>
+</div>
+</div>
+<div id="practice-3.-managing-incoming-data" class="callout challenge">
+<div class="callout-square">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap callout-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="practice-3.-managing-incoming-data" class="callout-inner">
+<h3 class="callout-title">Practice 3. Managing incoming data</h3>
+<div class="callout-content">
+<p>Suppose you have a number of acoustic listening devices set up in the
+forest. Every day, you receive an email from each device with an
+attached data file recording that day’s activity. In order to analyse
+the data from the devices, all the separate daily data files need to be
+combined weekly into a single file. It is important that each device ID
+is listed within a column in the combined data file to identify all the
+different locations.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<p>In order to analyse the data over time, you need to append the weekly
+file digest to the existing, now very large, main data file. Before
+adding anything new, and in order to safeguard the integrity of the
+data, you need to create a backup of that main data file and send a copy
+of that backup file to your cloud storage account for safekeeping. Once
+the new data has been appended, you need to rename the new main data
+file with today’s date as part of the file name, and run software
+against the file to ensure the integrity of the data, e.g., to check
+that no data is missing (which might indicate a malfunctioning
+device).</p>
+<p><em>Steps in the data combination process</em></p>
+<ol style="list-style-type: decimal">
+<li>Create a new copy of the main data file with today’s date as part of
+the file name.</li>
+<li>Move the previous version of the main data file to cloud
+storage.</li>
+<li>Save all the new data files individually to local storage with the
+device ID of each as part of the file names.</li>
+<li>Create a new weekly data file digest into which the daily digests
+from the different devices will be imported.</li>
+<li>Import each daily digest to that data file with an
+<code>append</code> command, ensuring that the device ID relating to
+each file’s data is written into a separate column.</li>
+<li>Append the weekly digest to the newly renamed main data file.</li>
+<li>Verify that no data is missing. In <a href="https://openrefine.org/" class="external-link">OpenRefine</a>, using
+<code>Facet by Blank</code> on the relevant data fields could be one way
+to verify that no data is missing.</li>
+</ol>
+<p><em>Using a shell script to automate the work</em></p>
+<p>Again, a shell script could be used to automate this work. Given that
+these tasks are run weekly, it would make sense to turn this into an
+automated task rather than a manual one as that will not only be faster,
+but will reduce the opportunity for error.</p>
+</div>
+</div>
+</div>
+</div></section>
+</div>
+    </main>
+</div>
+<!-- END  : inst/pkgdown/templates/content-extra.html -->
+
+      </div>
+<!--/div.row-->
+      		<footer class="row footer mx-md-3"><hr>
+<div class="col-md-6">
+        <p>This lesson is subject to the <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/CODE_OF_CONDUCT.html">Code of Conduct</a></p>
+        <p>
+
+        <a href="https://github.com/LibraryCarpentry/lc-computational-thinking/edit/main/README.md" class="external-link">Edit on GitHub</a>
+
+	
+        | <a href="https://github.com/LibraryCarpentry/lc-computational-thinking/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
+        | <a href="https://github.com/LibraryCarpentry/lc-computational-thinking/" class="external-link">Source</a></p>
+        <p>
+        <a href="https://github.com/LibraryCarpentry/lc-computational-thinking/blob/main/" class="external-link">Cite</a>
+        | <a href="mailto:team@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+		</div>
+		<div class="col-md-6">
+
+        <p>Materials licensed under <a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/LICENSE.html">CC-BY 4.0</a> by the authors</p>
+
+        <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.17.3" class="external-link">sandpaper (0.17.3)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.9" class="external-link">varnish (1.0.9)</a></p>
+		</div>
+		</footer>
+</div> <!-- / div.container -->
+	<div id="to-top">
+		<a href="https://librarycarpentry.github.io/lc-computational-thinking/instructor/aio.html#top">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up search-icon" role="img" aria-label="Back To Top"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg><br><!-- <span class="d-none d-sm-none d-md-none d-lg-none d-xl-block">Back</span> To Top --><span class="d-none d-sm-none d-md-none d-lg-none d-xl-block">Back</span> To Top
+		</a>
+	</div>
+  <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "@id": "https://library-carpentry.org/lc-computational-thinking/instructor/aio.html",
+  "inLanguage": "en",
+  "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
+  "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
+  "keywords": "software, data, lesson, The Carpentries",
+  "name": "All in One View",
+  "creativeWorkStatus": "active",
+  "url": "https://library-carpentry.org/lc-computational-thinking/instructor/aio.html",
+  "identifier": "https://library-carpentry.org/lc-computational-thinking/instructor/aio.html",
+  "dateCreated": "2022-08-12",
+  "dateModified": "2025-12-30",
+  "datePublished": "2025-12-30"
+}
+
+  </script><script>
+		feather.replace();
+	</script><!-- Matomo --><script>
+          var _paq = window._paq = window._paq || [];
+          /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+          _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+          _paq.push(["setDomains", ["*.lessons.carpentries.org","*.datacarpentry.github.io","*.datacarpentry.org","*.librarycarpentry.github.io","*.librarycarpentry.org","*.swcarpentry.github.io", "*.carpentries.github.io"]]);
+          _paq.push(["setDoNotTrack", true]);
+          _paq.push(["disableCookies"]);
+          _paq.push(["trackPageView"]);
+          _paq.push(["enableLinkTracking"]);
+          (function() {
+              var u="https://matomo.carpentries.org/";
+              _paq.push(["setTrackerUrl", u+"matomo.php"]);
+              _paq.push(["setSiteId", "1"]);
+              var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0];
+              g.async=true; g.src="https://matomo.carpentries.org/matomo.js"; s.parentNode.insertBefore(g,s);
+          })();
+        </script><!-- End Matomo Code -->
+
+
+
+</body></html>
