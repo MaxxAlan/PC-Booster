@@ -1,56 +1,24 @@
-
 # PC-Booster
-A small app build-in to help your pc performance.
 
-🔥 PerformanceBooster.exe — Nhỏ gọn, mạnh mẽ, tối ưu cực nhanh
-🚀 Hiệu năng vượt trội
-- Tối ưu hệ thống chỉ trong vài giây
-Không cần cài đặt, không cần chờ đợi. Chạy là máy mượt.
-- Tắt dịch vụ nền không cần thiết
-Giải phóng RAM, giảm CPU load, tăng tốc độ phản hồi.
-- Dọn rác và registry thông minh
-Loại bỏ file tạm, cache, và các mục registry dư thừa — sạch sẽ, an toàn.
-- Không cần PowerShell, không cần terminal
-Chỉ cần nhấp đôi vào PerformanceBooster.exe — đơn giản như mở một ứng dụng.
+**PC-Booster** is a small Windows console app for a few user-controlled maintenance tasks. The menu and prompts are in Vietnamese.
 
-📦 Kích thước siêu nhẹ
-- File .exe chỉ vài MB
-Không chiếm tài nguyên, không gây nặng máy.
-- Không tạo file phụ, không lưu trạng thái ngoài
-Chạy xong là sạch — đúng chất “booster”.
+## Features
 
-🛡️ Quyền quản trị tự động
-- Tự động yêu cầu quyền admin khi chạy
-Đảm bảo có đủ quyền để tối ưu sâu vào hệ thống.
+- **Boost PC:** review open applications, optional background services, and the High Performance power plan; choose each change before it is applied. Closed applications are not reopened automatically.
+- **Restore settings:** restore the original startup type and running state for services, plus the previous power plan, changed by Boost PC. The app saves this recovery data under `%LOCALAPPDATA%\PCBooster\restore-state.json` until it is restored.
+- **Clean temporary files:** review and optionally delete items older than seven days in the current user's `%TEMP%` folder. Files that are locked or inaccessible are skipped.
+- **View log:** show recent maintenance actions from the temporary log file.
+- **Remove AI:** scan 64-bit and 32-bit uninstall entries, current-user Store/MSIX apps, Claude Code's native Windows CLI path, and recognized global npm, pnpm, and Bun coding-agent packages. Remove the selected app/package, then offer a separate list and confirmation for known per-user data/config folders. That data can include sign-ins, settings, chat history, plugins, and downloaded models.
+- **Malware scan:** request a quick, full, or selected-path scan from Microsoft Defender and show Defender's status and recent detections. Detection depends on Defender and its security intelligence; the app does not claim that its own byte heuristics can prove a file is safe.
+- **Resource report:** sample process CPU use over two seconds, report current process memory, and list the largest registered app sizes where Windows provides an estimate. The report never closes processes automatically.
+- **Administrator access:** the executable requests elevation when started so Windows can apply service changes and run uninstallers that require administrator access.
 
-✨ Trải nghiệm người dùng
-- Giao diện dòng lệnh rõ ràng, tiếng Việt chuẩn Unicode
-- Menu trực quan, dễ thao tác
-- Phản hồi nhanh, không delay
+The app does not edit the registry to “clean” it. Windows does not provide a safe general-purpose registry-cleaning operation, and the previous version only targeted a dummy key. Malware scans use the installed Defender engine instead of shipping another large signature database. No file contents are sent to an AI API. Remove AI checks registered Windows apps, current-user Store apps, Claude's native CLI install, and recognized global npm/pnpm/Bun packages; it does not recursively search every drive or inspect project-local `node_modules` folders. Temporary logs are written to `%TEMP%`; service recovery data is kept until restored.
 
-#ENGLISH:
-⚡️ PerformanceBooster.exe — Lightweight, Powerful, and Blazing Fast
-🚀 Exceptional Performance
-- Optimizes your system in seconds
-No installation required. Just run it and feel the speed.
-- Disables unnecessary background services
-Frees up RAM, reduces CPU usage, and improves responsiveness.
-- Smart cleanup of junk files and registry entries
-Cleans safely and efficiently — no bloat, no risk.
-- No PowerShell, no terminal needed
-Just double-click PerformanceBooster.exe — as easy as launching any app.
+## Build
 
-📦 Ultra-Lightweight
-- The .exe file is just a few megabytes
-Minimal footprint, maximum impact.
-- No extra files, no persistent data
-Runs clean, leaves no trace.
+The PowerShell source is `PerformanceBooster.ps1`. To create the Windows executable, run `Invoke-ps2exe` from the `ps2exe` PowerShell module with the `-requireAdmin` option. The checked-in executable is `PerformanceBooster_v2.3.exe`.
 
-🛡️ Admin Access Built-In
-- Automatically requests admin privileges on launch
-Ensures deep-level optimization without manual setup.
+## English summary
 
-✨ User Experience
-- Clear command-line interface with full Unicode support
-- Intuitive menu, easy to navigate
-- Instant feedback, zero lag
+PC-Booster provides user-confirmed app and optional service tuning, service recovery, age-limited temporary-file cleanup, a temporary action log, **Remove AI** for registered desktop and Store apps, Claude's native CLI install, and recognized global npm/pnpm/Bun coding-agent packages, Microsoft Defender scans, and a local CPU/RAM/app-size report.
