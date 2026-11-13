@@ -1,0 +1,27 @@
+# Rust / Cargo
+/target/
+**/target/
+
+# Build output of the legacy PowerShell version
+legacy/*.exe
+*.resources
+
+# Editor / IDE
+.vscode/
+.idea/
+*.user
+*.suo
+
+# OS noise
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Logs and temporary artefacts
+*.log
+*.tmp
+*.bak
+e2e-results.json
+
+# Tauri generated schemas
+crates/pcbooster-app/gen/

@@ -1,0 +1,65 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  rust:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install tauri CLI
+        run: cargo install tauri-cli --version "^2" --locked
+
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+
+      - name: Format check
+        run: cargo fmt --all -- --check
+
+      - name: Clippy
+        run: cargo clippy --workspace --all-targets -- -D warnings
+
+      - name: Unit tests
+        run: cargo test --workspace --release
+
+      - name: Build desktop bundle
+        run: cargo tauri build
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: pcbooster-installer
+          path: target/release/bundle/nsis/*.exe
+          if-no-files-found: error
+
+  e2e:
+    runs-on: windows-latest
+    needs: rust
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install tauri CLI
+        run: cargo install tauri-cli --version "^2" --locked
+
+      - name: Build
+        run: cargo tauri build
+
+      - name: End to end test
+        shell: pwsh
+        run: ./scripts/test-e2e.ps1 -SkipBuild
